@@ -18,7 +18,8 @@ import { log } from 'util';
 </div>`,
 styles:[`
     .pad-Left { margin-left: 10px; }
-    .well-div { color: #bbb; }
+    .well div { color: #bbb; }
+
     `
 ]
 })

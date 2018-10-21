@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
     template: `<div>
     <h1>Upcoming Events</h1>
     <hr>
+
     <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
-    <h3>{{thumbnail.someProperty}}</h3>
-    <button class="btn btn-primary" (click)="thumbnail.logFoo()">Click</button>
+
 </div>`
 })
 export class EventsListComponent {
@@ -26,8 +26,5 @@ export class EventsListComponent {
 
     }
 
-    // handleEventClicked(id:number){
-    //     console.log("passed in " + id);
-    // }
 
 }
