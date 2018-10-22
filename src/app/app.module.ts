@@ -1,19 +1,23 @@
 import { Error404Component } from './errors/404.component';
+import { EventsAppComponent } from './events-app.component';
+import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { ToastrService } from './common/toastr.service';
-import { EventService } from './events/shared/event.service';
 import { NavBarComponent } from './nav/navbar.component';
-import { EventThumbnailComponent } from './events/events-thumbnail.component';
-import { EventsListComponent } from './events/events-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { EventsAppComponent } from './events-app.component';
-import { EventDetailsComponent } from './events/events-details/event-details.component';
-import { RouterModule } from '@angular/router';
-import { CreateEventComponent } from './events/create-event.component';
-import { EventRouteActivator } from './events/events-details/event-route-activator.service';
-import { EventListResolver } from './events/events-list-resolver.service';
+import {
+  EventDetailsComponent,
+  CreateEventComponent,
+  EventRouteActivator,
+  EventListResolver,
+  EventsListComponent,
+  EventThumbnailComponent,
+  EventService
+
+} from './events/index'
+
 
 @NgModule({
   declarations: [
@@ -31,8 +35,8 @@ import { EventListResolver } from './events/events-list-resolver.service';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    EventService, 
-    ToastrService, 
+    EventService,
+    ToastrService,
     EventRouteActivator,
     EventListResolver,
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
@@ -41,8 +45,8 @@ import { EventListResolver } from './events/events-list-resolver.service';
 })
 export class AppModule { }
 
-export function checkDirtyState(component:CreateEventComponent){
-  if (component.isDirty){
+export function checkDirtyState(component: CreateEventComponent) {
+  if (component.isDirty) {
     return window.confirm('You have not saved this event, do you really want to cancel?')
   }
 
