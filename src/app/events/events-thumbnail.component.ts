@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { log } from 'util';
+import { IEvent } from './shared/index'
 
 @Component({
     selector: 'event-thumbnail',
@@ -16,14 +16,14 @@ import { log } from 'util';
     ]
 })
 export class EventThumbnailComponent {
-    @Input() event: any
+    @Input() event: IEvent
     @Output() eventClick = new EventEmitter()
 
-    getTimeColorClass(){
-        if (this.event && this.event.time <= '8:00 am'){
+    getTimeColorClass() {
+        if (this.event && this.event.time <= '8:00 am') {
             return 'yellow bold'
         }
-        else if (this.event && this.event.time >= '2:00 pm'){
+        else if (this.event && this.event.time >= '2:00 pm') {
             return 'red bold'
         }
 
