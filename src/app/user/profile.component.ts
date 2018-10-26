@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { AuthService } from './auth.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router'
 
 @Component({
   templateUrl: './profile.component.html'
@@ -9,7 +10,7 @@ export class ProfileComponent implements OnInit {
 
   profileForm: FormGroup
 
-  constructor (private authService:AuthService){
+  constructor (private authService:AuthService, private router: Router){
 
   }
 
@@ -23,8 +24,13 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  cancel(){
-    
-  }
+  saveProfile(formValues) {
+    this.authService.updateCurrentUser(formValues.firstName, formValues.lastName);
+    this.router.navigate(['events']);
+}
+
+cancel() {
+    this.router.navigate(['events']);
+}
 
 }
