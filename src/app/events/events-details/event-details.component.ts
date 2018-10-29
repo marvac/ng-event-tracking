@@ -10,24 +10,24 @@ import { IEvent, ISession } from '../shared/event.model';
         .event-image {height: 100px;}
     `]
 })
-export class EventDetailsComponent{
+export class EventDetailsComponent {
 
-    event:IEvent
+    event: IEvent
     addMode: boolean
 
-    constructor(private eventService:EventService, private route:ActivatedRoute){
+    constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
 
-    ngOnInit(){
+    ngOnInit() {
         this.event = this.eventService.getEvent(+this.route.snapshot.params['id'])
     }
 
-    addSession(): void{
+    addSession(): void {
         this.addMode = true
     }
 
-    saveNewSession(session: ISession){
+    saveNewSession(session: ISession) {
         const nextId = Math.max.apply(null, this.event.sessions.map(s => s.id));
         session.id = nextId + 1;
         this.event.sessions.push(session)

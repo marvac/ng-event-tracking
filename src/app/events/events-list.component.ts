@@ -6,22 +6,22 @@ import { IEvent } from './shared/event.model';
 declare let toastr
 
 @Component({
-  templateUrl: './events-list.component.html' 
+  templateUrl: './events-list.component.html'
 })
 export class EventsListComponent implements OnInit {
 
   events: IEvent[];
 
-  constructor(private eventService: EventService, private toastr: ToastrService, private route:ActivatedRoute) {
-    
+  constructor(private eventService: EventService, private toastr: ToastrService, private route: ActivatedRoute) {
+
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.events = this.route.snapshot.data['events'];
   }
 
-  handleThumbnailClick(eventName){
+  handleThumbnailClick(eventName) {
     this.toastr.success(eventName);
   }
 }

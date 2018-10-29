@@ -18,9 +18,8 @@ import {
   EventThumbnailComponent,
   EventService,
   CreateSessionComponent,
-  SessionListComponent
-
-
+  SessionListComponent,
+  UpvoteComponent
 } from './events/index'
 
 
@@ -34,8 +33,8 @@ import {
     NavBarComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
-
+    SessionListComponent,
+    UpvoteComponent
   ],
   imports: [
     BrowserModule,
