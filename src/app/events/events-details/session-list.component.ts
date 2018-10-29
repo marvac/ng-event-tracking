@@ -8,5 +8,4 @@ import { ISession } from "../shared/index";
 export class SessionListComponent {
     @Input() sessions: ISession[]
 
-
 }

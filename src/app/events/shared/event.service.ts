@@ -20,9 +20,16 @@ export class EventService {
   }
 
   saveEvent(event) {
+    //for saving new events
     event.id = 999
     event.session = []
     EVENTS.push(event)
+  }
+
+  updateEvent(event){
+    //for saving existing events
+    let index = EVENTS.findIndex(x => x.id = event.id)
+    EVENTS[index] = event
   }
 }
 
