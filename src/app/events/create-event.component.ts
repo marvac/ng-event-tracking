@@ -13,22 +13,26 @@ import { Component } from '@angular/core';
     .error :-ms-input-placeholder { color: #999; }
   `]
 })
-export class CreateEventComponent{
+export class CreateEventComponent {
 
     newEvent: any
-    isDirty:boolean = true;
+    isDirty: boolean = true;
 
-    constructor(private router:Router, private eventService:EventService){
+    constructor(private router: Router, private eventService: EventService) {
 
     }
 
-    saveEvent(formValues): void{
+    ngOnInit(): void {
+
+    }
+
+    saveEvent(formValues): void {
         this.eventService.saveEvent(formValues)
         this.isDirty = false
         this.router.navigate(['/events'])
     }
 
-    cancel(){
+    cancel() {
         this.router.navigate(['/events'])
     }
 }
