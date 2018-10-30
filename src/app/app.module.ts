@@ -5,6 +5,7 @@ import { EventsAppComponent } from './events-app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { ToastrService } from './common/toastr.service';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -34,7 +35,8 @@ import {
     Error404Component,
     CreateSessionComponent,
     SessionListComponent,
-    UpvoteComponent
+    UpvoteComponent,
+    CollapsibleWellComponent
   ],
   imports: [
     BrowserModule,
