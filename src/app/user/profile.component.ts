@@ -22,11 +22,9 @@ export class ProfileComponent implements OnInit {
   private lastName: FormControl
 
   constructor(
-    private authService: AuthService, 
-    private router: Router, 
-    @Inject(TOASTR_TOKEN) private toastr: Toastr) {
-
-  }
+    private authService: AuthService,
+    private router: Router,
+    @Inject(TOASTR_TOKEN) private toastr: Toastr) { }
 
   ngOnInit() {
     this.firstName = new FormControl(this.authService.currentUser.firstName, [Validators.required, Validators.pattern('^[a-zA-Z]+$')])
