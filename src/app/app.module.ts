@@ -20,7 +20,8 @@ import {
   EventService,
   CreateSessionComponent,
   SessionListComponent,
-  UpvoteComponent
+  UpvoteComponent,
+  DurationPipe
 } from './events/index'
 
 
@@ -36,7 +37,8 @@ import {
     CreateSessionComponent,
     SessionListComponent,
     UpvoteComponent,
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    DurationPipe
   ],
   imports: [
     BrowserModule,
