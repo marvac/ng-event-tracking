@@ -4,7 +4,7 @@ import { Subject, Observable } from 'rxjs'
 
 
 @Injectable()
-export class AuthService{
+export class AuthService {
     currentUser: IUser
 
     loginUser(userName: string, password: string) {
@@ -16,7 +16,7 @@ export class AuthService{
         }
     }
 
-    updateCurrentUser(firstName: string, lastName: string){
+    updateCurrentUser(firstName: string, lastName: string) {
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
     }

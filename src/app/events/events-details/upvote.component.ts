@@ -5,6 +5,6 @@ import { Component } from "@angular/core";
     styleUrls: ['upvote.component.css']
 
 })
-export class UpvoteComponent{
+export class UpvoteComponent {
 
 }

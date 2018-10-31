@@ -11,8 +11,8 @@ import { Component } from '@angular/core'
     li > a.active { color: #f97924; }
     `]
 })
-export class NavBarComponent{
-    constructor(public authService:AuthService){
-        
+export class NavBarComponent {
+    constructor(public authService: AuthService) {
+
     }
 }

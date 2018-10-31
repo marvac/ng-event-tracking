@@ -9,11 +9,11 @@ import { Component, Input } from "@angular/core";
     </div>
     `
 })
-export class CollapsibleWellComponent{
+export class CollapsibleWellComponent {
 
     visible: boolean
 
-    toggleContent(): void{
+    toggleContent(): void {
         this.visible = !this.visible
     }
 }
