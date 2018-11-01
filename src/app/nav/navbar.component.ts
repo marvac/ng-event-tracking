@@ -23,8 +23,6 @@ export class NavBarComponent {
     searchSessions(): void {
         this.eventService.searchSessions(this.searchTerm).subscribe(sessions => {
             this.foundSessions = sessions
-            console.log(this.searchTerm)
-            console.log(this.foundSessions)
         })
     }
 }

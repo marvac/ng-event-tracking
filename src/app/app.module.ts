@@ -4,8 +4,6 @@ import { Error404Component } from './errors/404.component';
 import { EventsAppComponent } from './events-app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
-import { TOASTR_TOKEN, Toastr } from './common/toastr.service';
-import { CollapsibleWellComponent } from './common/collapsible-well.component';
 import { NavBarComponent } from './nav/navbar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -24,7 +22,17 @@ import {
   DurationPipe
 } from './events/index'
 
+import {
+  CollapsibleWellComponent,
+  SimpleModalComponent,
+  ModalTriggerDirective,
+  JQUERY_TOKEN,
+  TOASTR_TOKEN,
+  Toastr
+} from './common/index'
+
 let toastr: Toastr = window['toastr']
+let jquery = window['$']
 
 @NgModule({
   declarations: [
@@ -39,6 +47,8 @@ let toastr: Toastr = window['toastr']
     SessionListComponent,
     UpvoteComponent,
     CollapsibleWellComponent,
+    SimpleModalComponent,
+    ModalTriggerDirective,
     DurationPipe
   ],
   imports: [
@@ -53,6 +63,7 @@ let toastr: Toastr = window['toastr']
     EventListResolver,
     AuthService,
     { provide: TOASTR_TOKEN, useValue: toastr },
+    { provide: JQUERY_TOKEN, useValue: jquery },
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
   ],
   bootstrap: [EventsAppComponent]
