@@ -92,7 +92,7 @@ const EVENTS: IEvent[] = [
           the right management they can be even more productive, without 
           overworking them. In this session I'll show you how to get the 
           best results from the talent you already have on staff.`,
-        voters: ['johnpapa', 'bradgreen', 'igorminar', 'martinfowler']
+        voters: ['johnpapa', 'bradgreen', 'igorminar', 'martinfowler', 'herp', 'derp', 'jsmith', 'doctorx', 'user7', 'marcv', 'placeholder', 'rmiller']
       },
       {
         id: 3,

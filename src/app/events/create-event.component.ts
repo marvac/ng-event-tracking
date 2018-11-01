@@ -14,7 +14,6 @@ import { Component } from '@angular/core';
   `]
 })
 export class CreateEventComponent {
-
     newEvent: any
     isDirty: boolean = true;
 
