@@ -1,10 +1,17 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
-    templateUrl: 'upvote.component.html',
-    styleUrls: ['upvote.component.css']
+    selector: 'upvote',
+    templateUrl: './upvote.component.html',
+    styleUrls: ['./upvote.component.css']
 
 })
 export class UpvoteComponent {
+    @Input() voted: boolean
+    @Input() count: number
+    @Output() vote = new EventEmitter()
 
+    onClick(): void {
+        this.vote.emit({})
+    }
 }

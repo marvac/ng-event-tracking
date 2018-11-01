@@ -19,7 +19,8 @@ import {
   CreateSessionComponent,
   SessionListComponent,
   UpvoteComponent,
-  DurationPipe
+  DurationPipe,
+  VoterService
 } from './events/index'
 
 import {
@@ -62,6 +63,7 @@ let jquery = window['$']
     EventRouteActivator,
     EventListResolver,
     AuthService,
+    VoterService,
     { provide: TOASTR_TOKEN, useValue: toastr },
     { provide: JQUERY_TOKEN, useValue: jquery },
     { provide: 'canDeactivateCreateEvent', useValue: checkDirtyState }
