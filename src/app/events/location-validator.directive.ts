@@ -3,7 +3,7 @@ import { Validator, FormGroup, AbstractControl, NG_VALIDATORS } from '@angular/f
 
 @Directive({
     selector: '[validateLocation]',
-    providers: [{provide: NG_VALIDATORS, useExisting: LocationValidator, multi: true}]
+    providers: [{ provide: NG_VALIDATORS, useExisting: LocationValidator, multi: true }]
 
 })
 export class LocationValidator implements Validator {
@@ -22,7 +22,7 @@ export class LocationValidator implements Validator {
     }
 
     validateControls(...controls: AbstractControl[]): boolean {
-        
+
         return controls.every(x => {
             return x && x.value
         })
