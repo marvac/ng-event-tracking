@@ -12,7 +12,6 @@ import { NgModule } from '@angular/core';
 import {
   EventDetailsComponent,
   CreateEventComponent,
-  EventRouteActivator,
   EventListResolver,
   EventsListComponent,
   EventThumbnailComponent,
@@ -22,7 +21,8 @@ import {
   UpvoteComponent,
   DurationPipe,
   VoterService,
-  LocationValidator
+  LocationValidator,
+  EventResolver
 } from './events/index'
 
 import {
@@ -63,7 +63,7 @@ let jquery = window['$']
   ],
   providers: [
     EventService,
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     AuthService,
     VoterService,

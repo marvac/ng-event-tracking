@@ -22,12 +22,12 @@ export class EventDetailsComponent {
     }
 
     ngOnInit() {
-        this.route.params.forEach((params: Params) => {
-            this.event = this.eventService.getEvent(+params['id'])
+        this.route.data.forEach((data) => {
+                this.event = data['event'];
+                //make sure the form to add new session is reset after search
+                this.addMode = false
+            
         })
-
-        //make sure the form to add new session is reset after search
-        this.addMode = false
     }
 
     addSession(): void {
