@@ -26,6 +26,22 @@ describe('SessionListComponent', () => {
 
             expect(component.visibleSessions.length).toBe(2)
         })
+
+        it('should sort sessions properly', () => {
+            component.sessions = <ISession[]>[
+                { name: 'session C', level: 'intermediate' },
+                { name: 'session B', level: 'intermediate' },
+                { name: 'session A', level: 'beginner' }
+            ]
+
+            component.filterBy = 'all'
+            component.sortBy = 'name'
+            component.eventId = 3
+
+            component.ngOnChanges()
+
+            expect(component.visibleSessions[2].name).toBe('session C')
+        })
     })
 
 })
